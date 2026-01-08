@@ -1,0 +1,66 @@
+Absolutely, let me give you a nice clean summary of all the correct steps we’ve noted so far.
+
+---
+
+**Section 1: Setting Up the Project**
+
+1. **Create the Main Project Folder**:
+   Create a main folder named `jobportal` and navigate into it.
+
+2. **Set Up the React Frontend**:
+   Inside the `jobportal` folder, run the command to create a Vite + React project:
+
+   ```bash
+   npm create vite@latest frontend
+   ```
+
+   Follow the prompts: choose "React," "JavaScript," and let it install dependencies automatically.
+
+3. **Check Python and pip**:
+   Make sure Python is installed by running `python --version` and ensure `pip` is working by running `pip --version`.
+
+4. **Create a Python Virtual Environment**:
+   Set up a virtual environment for the Django backend:
+
+   ```bash
+   python -m venv venv
+   ```
+
+   Then activate it:
+
+   * On Windows: `venv\Scripts\activate`
+   * On Mac/Linux: `source venv/bin/activate`
+
+5. **Install Django**:
+   With the virtual environment activated, install Django using:
+
+   ```bash
+   python -m pip install django
+   ```
+
+6. **Create the Django Backend**:
+   Inside the `jobportal` folder, create the Django project in a folder named `backend`:
+
+   ```bash
+   django-admin startproject backend
+   ```
+
+7. **Run the Django Development Server**:
+   Navigate into the `backend` directory:
+
+   ```bash
+   cd backend
+   ```
+
+   Then run the server:
+
+   ```bash
+   python manage.py runserver
+   ```
+
+8. **Verify the Backend**:
+   Open your browser and go to `http://localhost:8000` to confirm the Django server is running.
+
+---
+
+And that’s everything we've covered in Section 1. You’ve now got a React frontend and a Django backend both set up and running inside your job portal project. Let me know if there's anything else!
