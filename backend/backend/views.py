@@ -3,7 +3,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from django.contrib.auth.models import User
 
-from .models import Job
+from .models import Application, Job
 
 
 
@@ -47,6 +47,18 @@ def job_list(request):
 
 @api_view(['POST'])
 def apply_job(request):
+    job_id = request.data.get('job')
+    applicant_id = request.data.get('applicant')
+
+     # Check if this applicant has already applied to this job
+    if Application.objects.filter(job_id=job_id, applicant_id=applicant_id).exists():
+        return Response(
+            {"message": "You have already applied for this job"},
+            status=status.HTTP_400_BAD_REQUEST
+        )
+
+    # Proceed with normal creation
+
     serializer = ApplicationSerializer(data=request.data)
     if serializer.is_valid():
         serializer.save()
