@@ -26,21 +26,6 @@ class Job(models.Model):
     def __str__(self):
         return self.title
     
-class Application(models.Model):
-    STATUS_CHOICES = (
-        ('pending', 'Pending'),
-        ('shortlisted', 'Shortlisted'),
-        ('rejected', 'Rejected'),
-        ('hired', 'Hired'),
-    )
-    job = models.ForeignKey(Job, on_delete=models.CASCADE)
-    applicant = models.ForeignKey(Profile, on_delete=models.CASCADE)
-    resume = models.TextField(blank=True, null=True)
-    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='pending')
-    applied_on = models.DateTimeField(auto_now_add=True)
-
-    def __str__(self):
-        return f"{self.applicant.user.username} → {self.job.title}"
     
 class Application(models.Model):
     STATUS_CHOICES = (
@@ -50,7 +35,7 @@ class Application(models.Model):
         ('hired', 'Hired'),
     )
     job = models.ForeignKey(Job, on_delete=models.CASCADE)
-    applicant = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    applicant = models.ForeignKey(User, on_delete=models.CASCADE)
     resume = models.TextField(blank=True, null=True)
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default='pending')
     applied_on = models.DateTimeField(auto_now_add=True)

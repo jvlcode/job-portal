@@ -7,7 +7,7 @@ from .models import Job
 
 
 
-from .serializers import JobSerializer, RegisterSerializer
+from .serializers import ApplicationSerializer, JobSerializer, RegisterSerializer
 
 
 @api_view(['GET'])
@@ -39,4 +39,12 @@ def job_list(request):
     jobs = Job.objects.all()
     serializer = JobSerializer(jobs, many=True)
     return Response(serializer.data)
+
+@api_view(['POST'])
+def apply_job(request):
+    serializer = ApplicationSerializer(data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+        return Response({"message": "Application submitted"}, status=201)
+    return Response(serializer.errors, status=400)
 

@@ -1,7 +1,7 @@
 # jobs/serializers.py
 from rest_framework import serializers
 from django.contrib.auth.models import User
-from .models import Job
+from .models import Application, Job
 class RegisterSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
@@ -19,3 +19,7 @@ class JobSerializer(serializers.ModelSerializer):
             'posted_on',
             'created_by',
         ]
+class ApplicationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Application
+        fields = '__all__'
