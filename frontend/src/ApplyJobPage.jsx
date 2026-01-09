@@ -1,21 +1,24 @@
 import { useState } from "react";
+import { useParams } from "react-router-dom";
 
-export default function ApplyJobPage({ jobId, applicantId }) {
+export default function ApplyJobPage() {
   const [message, setMessage] = useState(null);
   const [error, setError] = useState(null);
+  const { jobId } = useParams(); // get job ID from URL
+
 
   const handleApply = async (e) => {
     e.preventDefault();
     setMessage(null);
     setError(null);
-
+    const userId = localStorage.getItem("userId");
     try {
       const res = await fetch("http://localhost:8000/apply", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           job: jobId,
-          applicant: applicantId,
+          applicant: userId,
         }),
       });
 

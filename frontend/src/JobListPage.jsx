@@ -1,5 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
+import { NavLink } from 'react-router-dom';
 
 export default function JobListPage() {
   const [jobs, setJobs] = useState([]);
@@ -57,9 +58,9 @@ export default function JobListPage() {
                 </div>
 
                 <div className="mt-4 flex justify-end">
-                  <button className="text-sm font-medium text-blue-700 hover:underline">
+                  <NavLink to={`/apply/${job.id}`} className="text-sm font-medium text-blue-700 hover:underline">
                     View Details →
-                  </button>
+                  </NavLink>
                 </div>
               </div>
             ))
