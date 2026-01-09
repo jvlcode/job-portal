@@ -1,6 +1,6 @@
 'use client';
 import { useActionState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 async function loginAction(_, formData) {
     const json = Object.fromEntries(formData.entries());
@@ -43,7 +43,7 @@ export default function LoginPage() {
                         <a href="#" className="hover:text-blue-700">Jobs</a>
                         <a href="#" className="hover:text-blue-700">Companies</a>
                         <a href="#" className="hover:text-blue-700">Services</a>
-                        <a href="#" className="hover:text-blue-700">Login</a>
+                        <NavLink to={`/register`} className="hover:text-blue-700">Register</NavLink>
                     </nav>
                 </div>
             </header>

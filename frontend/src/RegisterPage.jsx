@@ -1,5 +1,6 @@
 'use client';
 import { useActionState } from 'react';
+import { NavLink } from 'react-router-dom';
 
 async function registerAction(_, formData) {
     const json = Object.fromEntries(formData.entries());
@@ -32,7 +33,7 @@ export default function RegisterForm() {
             <a href="#" className="hover:text-blue-700">Jobs</a>
             <a href="#" className="hover:text-blue-700">Companies</a>
             <a href="#" className="hover:text-blue-700">Services</a>
-            <a href="#" className="hover:text-blue-700">Login</a>
+             <NavLink to={`/login`} className="hover:text-blue-700">Login</NavLink>
           </nav>
         </div>
       </header>
