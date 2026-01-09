@@ -21,7 +21,7 @@ class Job(models.Model):
     location = models.CharField(max_length=100)
     salary_range = models.CharField(max_length=50, blank=True)
     posted_on = models.DateTimeField(auto_now_add=True)
-    created_by = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    created_by = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.title
