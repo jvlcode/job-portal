@@ -12,6 +12,11 @@ async function loginAction(_, formData) {
     });
 
     const data = await res.json();
+    if (res.ok) {
+        localStorage.setItem('userId', data.user_id); // ✅ store user ID
+        localStorage.setItem('username', data.username); // optional
+    }
+
     return data.message || 'Login failed';
 }
 
