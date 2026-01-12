@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apply Job | JobPortal</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="min-h-screen bg-gray-50 text-gray-800 flex flex-col">
+
+  <!-- ================= HEADER ================= -->
+  <header class="border-b bg-white">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
+      <h1 class="text-xl font-bold text-blue-700">JobPortal</h1>
+
+      <nav class="hidden md:flex gap-6 text-sm font-medium text-gray-700">
+        <a href="#" class="hover:text-blue-700">Jobs</a>
+        <a href="#" class="hover:text-blue-700">Companies</a>
+        <a href="#" class="hover:text-blue-700">My Applications</a>
+      </nav>
+
+      <div class="flex items-center gap-4">
+        <span class="text-sm text-gray-600">Hello, Logesh</span>
+        <div class="flex h-8 w-8 items-center justify-center rounded-full bg-blue-700 text-sm font-semibold text-white">
+          L
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= MAIN ================= -->
+  <main class="min-h-[calc(100vh-140px)] px-4">
+
+    <!-- Back Link -->
+    <div class="max-w-7xl mx-auto pt-6">
+      <a
+        href="/jobs"
+        class="inline-flex items-center gap-2 mb-4
+               text-sm font-medium text-blue-600
+               hover:text-blue-700 hover:underline"
+      >
+        ← Back to Jobs
+      </a>
+    </div>
+
+    <!-- Apply Card -->
+    <div class="flex items-center justify-center py-10">
+      <div class="w-full max-w-md rounded-lg border bg-white p-6">
+
+        <h2 class="text-lg font-semibold text-gray-900">
+          Apply for this job
+        </h2>
+        <p class="mt-1 text-sm text-gray-500">
+          Your profile will be shared with the recruiter
+        </p>
+
+        <form class="mt-5 space-y-4">
+
+          <button
+            type="submit"
+            class="w-full rounded-lg bg-blue-700 py-2.5
+                   font-semibold text-white
+                   hover:bg-blue-800
+                   focus:outline-none focus:ring-2 focus:ring-blue-500"
+          >
+            Apply Now
+          </button>
+
+          <!-- Success Message -->
+          <p class="text-center text-sm text-green-600">
+            Application submitted successfully
+          </p>
+
+          <!-- Error Message (preview) -->
+          <!--
+          <p class="text-center text-sm text-red-600">
+            You have already applied for this job
+          </p>
+          -->
+
+        </form>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="border-t bg-white">
+    <div class="mx-auto max-w-7xl px-4 py-6 text-center text-sm text-gray-500">
+      © 2026 JobPortal.com | All rights reserved
+    </div>
+  </footer>
+
+</body>
+</html>
